@@ -19,7 +19,7 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('Bot is online');
-    client.user.setActivity("!help | twitter.com/fablessb");
+    client.user.setActivity("!help | discord.gg/NkQCE68");
 });
 
 
@@ -40,7 +40,7 @@ client.on('message', message =>{
         client.commands.get('help').execute(message, args);
     else if(command == 'ping')
         client.commands.get('ping').execute(message, args);
-        
+
 });
 
 

@@ -1,7 +1,7 @@
 module.exports = {
 
     name: 'togglemute',
-    description: "Adds a reaction to the !togglemute command just sent that the user can react in order to mute or unmute all members in the voice channel the user is in",
+    description: "Adds a reaction to the !togglemute command just sent that the user can react to in order to mute or unmute all members in the voice channel the user is in",
     
     execute(message, args){
         
@@ -23,9 +23,12 @@ module.exports = {
 
         collector.on('collect', (reaction, user) =>{
 
+            let muteperm2 = message.member.permissions.has("MUTE_MEMBERS");
             let channel = message.member.voice.channel;
 
-            if(channel == null)
+            if(!muteperm2)
+                message.channel.send('You do not have permission to use this command');
+            else if(channel == null)
                 message.channel.send('Please join a voice channel');
             else{
                 for(let member of channel.members)
@@ -36,9 +39,12 @@ module.exports = {
 
         collector.on('remove', (reaction, user) =>{
 
+            let muteperm2 = message.member.permissions.has("MUTE_MEMBERS");
             let channel = message.member.voice.channel;
 
-            if(channel == null)
+            if(!muteperm2)
+                message.channel.send('You do not have permission to use this command');
+            else if(channel == null)
                 message.channel.send('Please join a voice channel');
             else{
                 for(let member of channel.members)
