@@ -19,7 +19,7 @@ module.exports = {
             return reaction.emoji.name === '🤐' && user.id === message.author.id;
         };
 
-        const collector = message.createReactionCollector(filter, { time: 2000000, dispose: true });
+        const collector = message.createReactionCollector(filter, { dispose: true });
 
         collector.on('collect', (reaction, user) =>{
 
