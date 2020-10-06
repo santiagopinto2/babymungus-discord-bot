@@ -1,7 +1,7 @@
 {
   "name": "babymungus",
   "version": "1.0.0",
-  "description": "",
+  "description": "Discord bot for Among Us that allows users to mute and unmute all users in a voice channel all at once",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

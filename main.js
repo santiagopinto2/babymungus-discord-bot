@@ -37,12 +37,12 @@ client.on('message', message =>{
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    if(command == 'mute')
+    if(command == 'togglemute')
+        client.commands.get('togglemute').execute(message, args);
+    else if(command == 'mute')
         client.commands.get('mute').execute(message, args);
     else if(command == 'unmute')
         client.commands.get('unmute').execute(message, args);
-    else if(command == 'togglemute')
-        client.commands.get('togglemute').execute(message, args);
     else if(command == 'help')
         client.commands.get('help').execute(message, args);
     else if(command == 'ping')
