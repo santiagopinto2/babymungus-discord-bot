@@ -1,8 +1,15 @@
 const Discord = require('discord.js');
+require('dotenv-flow').config();
+
+const config = {
+    token: process.env.TOKEN,
+    owner: process.env.OWNER,
+    prefix: process.env.PREFIX
+};
 
 const client = new Discord.Client();
 
-const prefix = '!';
+const prefix = config.prefix;
 
 const fs = require('fs');
 
@@ -45,28 +52,4 @@ client.on('message', message =>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-client.login('NzYxNzQyMTc2MzI0NTUwNjk2.X3fBrw.msQ4tYV4V4-x909NMQhKHtXpBR0');
+client.login(config.token);
