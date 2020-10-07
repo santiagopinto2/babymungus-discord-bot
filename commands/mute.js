@@ -12,8 +12,8 @@ module.exports = {
         else if(channel == null)
             message.channel.send('Please join a voice channel');
         else{
-            for(let member of channel.members)
-                member[1].voice.setMute(true);
+            for(const [memberID, member] of channel.members)
+                    member.voice.setMute(true);
         }
 
     }
