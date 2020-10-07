@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+    babymungus:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: babymungus-image
+        container_name: babymungus-container
+        restart: unless-stopped
+        env_file: .env
+        volumes: 
+            - .:/home/node/app
+            - node_modules:/home/node/app/node_modules
+
+volumes: 
+    node_modules:
