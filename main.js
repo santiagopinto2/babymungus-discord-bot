@@ -45,6 +45,8 @@ client.on('message', message =>{
         client.commands.get('unmute').execute(message, args);
     else if(command == 'help')
         client.commands.get('help').execute(message, args);
+    else if(command == 'servers')
+        client.commands.get('servers').execute(message, args, client);
     else if(command == 'ping')
         client.commands.get('ping').execute(message, args);
 
