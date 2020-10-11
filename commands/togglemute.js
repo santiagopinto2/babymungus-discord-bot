@@ -13,10 +13,10 @@ module.exports = {
 
 
 
-        message.react('🤐');
+        message.react('🤫');
 
         const filter = (reaction, user) => {
-            return reaction.emoji.name === '🤐' && user.id === message.author.id;
+            return reaction.emoji.name === '🤫' && user.id === message.author.id;
         };
 
         const collector = message.createReactionCollector(filter, { dispose: true });
