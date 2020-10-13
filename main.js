@@ -46,7 +46,7 @@ client.on('message', message =>{
     else if(command == 'help')
         client.commands.get('help').execute(message, args);
     else if(command == 'servers')
-        client.commands.get('servers').execute(message, args, client);
+	client.commands.get('servers').execute(message, args, client.guilds.cache.size);
     else if(command == 'ping')
         client.commands.get('ping').execute(message, args);
 
